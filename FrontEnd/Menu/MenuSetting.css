@@ -1,14 +1,25 @@
+:root{
+    --primary-color:black;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img{
+    height: 100%;
+    position: absolute;
+}
 body{
-    background-image: url("/FrontEnd/Asset/Web-Background.jpg");
-    background-size: contain;
-    background-position:bottom;
+    background: url("/FrontEnd/Asset/Web-Background.jpg") no-repeat center center/cover fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
     'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     text-align: center;
     border-style: hidden;
-} 
+}
+
 h1{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -30,15 +41,16 @@ button{
     margin-bottom: 10px;
     border-radius: 20px;
 }
-/* .header {
-    opacity: 0;
-    background-color: #333;
-    text-align: center;
-    padding: 20px;
-} */
 .topnav {
+    opacity: 0;
     overflow: hidden;
     background-color: #333;
+    width: 100%;
+    padding: 0;
+    letter-spacing: 1px;
+}
+.topnav:hover{
+    opacity: 1;
 }
   
   /* Navbar links */
@@ -55,16 +67,7 @@ button{
     background-color: #ddd;
     color: black;
 }
-#increment-btn{
-    opacity: 0.5;
-    background: rgb(80, 80, 80);
-    position: static;
-}
-#decrement-btn{
-    opacity: 0.5;
-    background: rgb(80, 80, 80);
-    position: relative;
-}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
