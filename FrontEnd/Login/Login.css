@@ -1,6 +1,7 @@
 body{
     background-image: url("/FrontEnd/Asset/Web-Background.jpg");
-    background-size: contain;
+    background-repeat: no-repeat ;
+    background-size: cover;
     background-position:bottom;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
@@ -9,60 +10,47 @@ body{
     text-align: center;
     border-style: hidden;
 } 
-h1{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: red;
+form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding:2em;
 }
-h2{
-    font-size: 50px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    /*color: rgb(118, 53, 30);*/
-    color: red;
-}
-button{
-    border-color: rgb(80, 14, 13);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: red;
-    width: 200px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-}
-.header {
-    background-color: #333;
-    text-align: center;
-    padding: 20px;
-}
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-  
-  /* Navbar links */
-.topnav a {
-    float: left;
+.form-box{
+    background-color: rgba(0, 0, 0, 0.5)
+}  
+fieldset {
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 3px solid rgb(80, 80, 80);
+    color: rgb(255,0,0);
+}  
+fieldset:last-of-type {
+    border-bottom: none;
+}  
+label {
     display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    margin: 0.5rem 0;
 }
-  /* Links - change color on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+input{
+    margin: 10px 0 0 0;
+    width: 100%;
+  min-height: 2em;
+    background-color: rgba(230,230,230,0,1);
+    border: 1px solidrgb(0,0,0);
+    color: rgb(0, 0, 0);
 }
-#increment-btn{
-    opacity: 0.5;
-    background: rgb(80, 80, 80);
-    position: static;
-}
-#decrement-btn{
-    opacity: 0.5;
-    background: rgb(80, 80, 80);
-    position: relative;
+input[type="submit"]{
+    display: block;
+    width: 60%;
+    margin: 1em auto 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: rgb(20, 20, 20);
+    border-color: rgba(255, 0, 0,0.2);
+    color: rgb(210, 10, 10);
+    min-width:300px;
 }
 /* width */
 ::-webkit-scrollbar {
