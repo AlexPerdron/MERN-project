@@ -10,18 +10,6 @@ body{
     text-align: center;
     border-style: hidden;
 } 
-h1{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: red;
-}
-h2{
-    font-size: 50px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    /*color: rgb(118, 53, 30);*/
-    color: red;
-}
 form {
     width: 60vw;
     max-width: 500px;
@@ -30,15 +18,19 @@ form {
     padding:2em;
 }
 .form-box{
-    background-color: rgba(58, 55, 55, 0.7)
+    background-color: rgba(0, 0, 0, 0.5)
 }  
 fieldset {
     border: none;
     padding: 2rem 0;
-    border-bottom: 3px solid #3b3b4f;
-    opacity: 1;
+    border-bottom: 3px solid rgb(80, 80, 80);
 }  
-
+.fieldset1{
+    color: rgb(255, 0, 0);
+}
+.fieldset2{
+    color:rgba(255, 255, 255, 0.7);
+}
 fieldset:last-of-type {
     border-bottom: none;
 }  
@@ -55,9 +47,9 @@ select {
 }
 
 input, textarea {
-  background-color: #0a0a23;
-  border: 1px solid #0a0a23;
-  color: #ffffff;
+  background-color: rgba(230, 230, 230, 0.1);
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0,0,0);
 }
 
 .inline {
@@ -72,21 +64,13 @@ input[type="submit"]{
     margin: 1em auto 1em auto;
     height: 2em;
     font-size: 1.1rem;
-    background-color: #3b3b4f;
-    border-color: white;
+    background-color: rgb(20, 20, 20);
+    border-color: rgba(255, 0, 0,0.2);
+    color: rgb(210, 10, 10);
     min-width:300px;
 }
 input[type="file"]{
     padding: 1px 2px;
-}
-button{
-    border-color: rgb(80, 14, 13);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: red;
-    width: 200px;
-    margin-bottom: 10px;
-    border-radius: 20px;
 }
 
   /* Links - change color on hover */
