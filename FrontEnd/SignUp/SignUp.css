@@ -1,3 +1,6 @@
+:root{
+    --primary-color: rgb(255,0,0);
+}
 body{
     background-image: url("/FrontEnd/Asset/Web-Background.jpg");
     background-repeat: no-repeat;
@@ -26,10 +29,10 @@ fieldset {
     border-bottom: 3px solid rgb(80, 80, 80);
 }  
 .fieldset1{
-    color: rgb(255, 0, 0);
+    color: var(--primary-color);
 }
 .fieldset2{
-    color:rgba(255, 255, 255, 0.7);
+    color:rgb(255, 255, 255);
 }
 fieldset:last-of-type {
     border-bottom: none;
@@ -68,9 +71,6 @@ input[type="submit"]{
     border-color: rgba(255, 0, 0,0.2);
     color: rgb(210, 10, 10);
     min-width:300px;
-}
-input[type="file"]{
-    padding: 1px 2px;
 }
 
   /* Links - change color on hover */
