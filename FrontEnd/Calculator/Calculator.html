@@ -1,19 +1,25 @@
 <html>
     <head>
-        <link rel="stylesheet" href="SignUp.css">
+        <link rel="stylesheet" href="Calculator.css">
     </head>
     <body>
         <!--header-->
         <div class="header">
         </div>
-       <form method="post" action="register" class="form-box">
-            <fieldset class="fieldset1">
+        <!--navigation menu-->
+        <!-- <div class="topnav">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </div> -->
+       <form method="post" action="register">
+            <fieldset>
                 <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
                 <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
                 <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
                 <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
             </fieldset>
-            <fieldset class="fieldset2">
+            <fieldset>
                 <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
                 <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
                 <label for="terms-and-conditions">
