@@ -93,10 +93,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;   
+    transition: height 0.5s ease;
+    /* overflow: hidden; */
+}
+.wrapper .active{
+    height: 520px;
 }
 .wrapper .form-box{
     width:100%;
     padding: 40px; 
+}
+.wrapper .form-box.login{
+    /* display: none;*/
+} 
+.wrapper .form-box.register{
+    position:absolute;
+    transform: translateX(400px);
 }
 .wrapper .close-popup{
     position: absolute;
@@ -188,7 +200,7 @@ body{
 .forget-remember a:hover{
     text-decoration: underline;
 }
-.submit-register input{
+.submit-register button{
     display: block;
     width: 60%;
     margin: 1em auto 1em auto;
@@ -212,6 +224,9 @@ body{
     text-decoration: none;
     color: rgb(255, 0, 0);
     padding-left: 5px;
+}
+.submit-register a:hover{
+    text-decoration: underline;
 }
 
 /* width */
