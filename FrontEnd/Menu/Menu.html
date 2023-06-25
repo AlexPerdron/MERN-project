@@ -10,13 +10,38 @@
     </head>
     <body>
         <header class="header">
-            <div class="topnav" style="position: relative; top: 0px;">
+            <nav class="topnav" style="position: relative; top: 0px;">
                 <div style="overflow:auto;"></div>
-                <a href="/FrontEnd/Login/Login.html">Login</a>
-                <a href="/FrontEnd/SignUp/SignUp.html">Sign Up</a>
+                <a href="/FrontEnd/Menu/Menu.html">Home</a>
+                <a href="#">Services</a>
+                <!-- <a href="/FrontEnd/ SignUp/SignUp.html">Sign Up</a> -->
                 <a href="/FrontEnd/Calculator/Calculator.html">Calculator</a>
-            </div>
+                <button class="btnLogin-popup">Login</button>
+            </nav>
         </header>
-        <h1>Khoa Projects</h1>
+        <div class="wrapper">
+            <div class="form-box login">
+                <h1>Login</h1>
+                <form action="login">
+                    <div class="input-box">
+                        <label class="username">Username</label>
+                            <input type="text" name="username" required />
+                    </div>
+                    <div class="input-box">
+                        <label id="password">Password</label>
+                        <input type="password" name="password" required />
+                    </div>
+                    <div class="forget-remember">
+                        <label id="forget-password"><a href="#">Forget Password?</a></label>
+                        <label id="remember-me"><input type="checkbox" name="remember-me" /> Remember Me</label>
+                    </div>
+                    <div class="submit-register">
+                        <p>Don't have an account<a href="/FrontEnd/Register/Register.html">Register here.</p>
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        
     </body>
 </html>
