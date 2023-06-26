@@ -6,7 +6,6 @@
         <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="MenuSetting.css">
-        <script src="https://kit.fontawesome.com/53396fad41.js" crossorigin="anonymous"></script>
         <title>AlexPerdron - 14104</title>
     </head>
     <body>
@@ -15,7 +14,6 @@
                 <div style="overflow:auto;"></div>
                 <a href="/FrontEnd/Menu/Menu.html">Home</a>
                 <a href="#">Services</a>
-                <!-- <a href="/FrontEnd/ SignUp/SignUp.html">Sign Up</a> -->
                 <a href="/FrontEnd/Calculator/Calculator.html">Calculator</a>
                 <button class="btnLogin-popup">Login</button>
             </nav>
@@ -24,9 +22,39 @@
             <span class="close-popup">
                 <i class="fa-solid fa-xmark"></i>
             </span>
+
+            <div class="form-box register">
+                <h1>Registration</h1>
+                <form action="#">
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" required>
+                        <label>Enter Username:</label>
+                    </div>
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" required>
+                        <label>Enter Email:</label>
+                    </div>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" required>
+                        <label>Enter Password:</label>
+                    </div>
+                    <div class="forget-remember">
+                        <label for="terms-and-conditions">
+                            <input id="terms-and-conditions" type="checkbox" required/> I accept the <span style="color: red;">terms and conditions</span>
+                        </label>
+                    </div>
+                    <div class="submit-register">
+                        <button type="submit" class="btn">Register</button>
+                        <p>Already have an account.<a href="#" class="login-link">Login here.</a></p>
+                    </div>
+                </form>
+            </div>
             <div class="form-box login">
                 <h1>Login</h1>
-                <form action="login">
+                <form action="#">
                     <div class="input-box">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" required>
@@ -42,12 +70,13 @@
                         <a href="#">Forget Password?</a>
                     </div>
                     <div class="submit-register">
-                        <input type="submit" value="Submit" />
-                        <p>Don't have an account.<a href="/FrontEnd/Register/Register.html">Register here. </p>
+                        <button type="submit" class="btn">Login</button>
+                        <p>Don't have an account.<a href="#" class="register-link">Register here. </p>
                     </div>
                 </form>
-            </div>
+            </div>            
         </div>
-        
+        <script src="https://kit.fontawesome.com/53396fad41.js" crossorigin="anonymous"></script>
+        <script src="MenuScript.js"></script>
     </body>
 </html>
