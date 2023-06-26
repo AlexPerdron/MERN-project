@@ -84,7 +84,7 @@ body{
 .wrapper{
     position: relative;
     width: 400px;
-    height: 440px;
+    height: 400px;
     background: transparent;
     border: 2px solid rgba(255,255,255, 0.5);
     border-radius: 20px;
@@ -93,8 +93,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;   
-    transition: height 0.5s ease;
-    /* overflow: hidden; */
+    transition: tranforms .5s ease, height 0.5s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+.wrapper.active-popup{
+    transform: scale(1);
 }
 .wrapper .active{
     height: 520px;
@@ -104,11 +108,21 @@ body{
     padding: 40px; 
 }
 .wrapper .form-box.login{
-    /* display: none;*/
+    transition: transform 0.18s ease;
+    transform: translateX(0);
 } 
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
 .wrapper .form-box.register{
     position:absolute;
+    transition: none;
     transform: translateX(400px);
+}
+.wrapper.active .form-box.register{
+    transform: translateX(0);
+    transition: transform 0.18s ease;
 }
 .wrapper .close-popup{
     position: absolute;
@@ -195,7 +209,6 @@ body{
 .forget-remember a{
     text-decoration: none;
     color: rgb(255, 0, 0);
-
 }
 .forget-remember a:hover{
     text-decoration: underline;
