@@ -96,9 +96,12 @@ body{
     transition: tranforms .5s ease, height 0.5s ease;
     overflow: hidden;
     transform: scale(0);
+    display: none;
 }
 .wrapper.active-popup{
+    height: 450px;
     transform: scale(1);
+    display: flex;
 }
 .wrapper .active{
     height: 520px;
@@ -193,6 +196,16 @@ body{
     font-size: 1.2em;
     color: rgb(255,255,255);
     line-height: 10px;
+}
+.checkbox{
+    position: relative;
+    margin: -10px 0 25px 0;
+    font-size: 0.9em;
+    color: rgb(255,255,255);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .forget-remember{
     font-size: 0.9em;
