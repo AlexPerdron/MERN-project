@@ -4,6 +4,9 @@ const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
 const iconClose = document.querySelector('.close-popup');
 
+var repassword = document.getElementById("Re-Password");
+var password = document.getElementById("Password");
+
 registerLink.addEventListener("click", () => {
     wrapper.classList.add("active");
 });
@@ -17,3 +20,6 @@ iconClose.addEventListener("click", () => {
     wrapper.classList.remove("active-popup");
     console.log("close");
 });
+if (repassword != password) {
+    alert("Password not match");
+}

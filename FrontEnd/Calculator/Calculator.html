@@ -1,14 +1,126 @@
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width, intial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="Calculator.css">
         <title>Calculator</title>
+        <link rel="stylesheet" href="Calculator.css">
+        <script src="Calculator.js"></script>
     </head>
     <body>
-        <div class="header">
-        </div>
-        <script></script>
+        <div class="calculator">
+            <div class="display">
+                <div class="display-text">
+                    <p id="display-text"></p>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <button class="button" onclick="clearDisplay()">C</button>
+                    <button class="button" onclick="backspace()">CE</button>
+                    <button class="button" onclick="insert('%')">%</button>
+                    <button class="button" onclick="insert('/')">/</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('7')">7</button>
+                    <button class="button" onclick="insert('8')">8</button>
+                    <button class="button" onclick="insert('9')">9</button>
+                    <button class="button" onclick="insert('*')">*</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('4')">4</button>
+                    <button class="button" onclick="insert('5')">5</button>
+                    <button class="button" onclick="insert('6')">6</button>
+                    <button class="button" onclick="insert('-')">-</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('1')">1</button>
+                    <button class="button" onclick="insert('2')">2</button>
+                    <button class="button" onclick="insert('3')">3</button>
+                    <button class="button" onclick="insert('+')">+</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('0')">0</button>
+                    <button class="button" onclick="insert('.')">.</button>
+                    <button class="button" onclick="insert('(')">(</button>
+                    <button class="button" onclick="insert(')')">)</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('sin(')">sin</button>
+                    <button class="button" onclick="insert('cos(')">cos</button>
+                    <button class="button" onclick="insert('tan(')">tan</button>
+                    <button class="button" onclick="insert('log(')">log</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('asin(')">asin</button>
+                    <button class="button" onclick="insert('acos(')">acos</button>
+                    <button class="button" onclick="insert('atan(')">atan</button>
+                    <button class="button" onclick="insert('ln(')">ln</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('!')">!</button>
+                    <button class="button" onclick="insert('sqrt(')">sqrt</button>
+                    <button class="button" onclick="insert('^')">^</button>
+                    <button class="button" onclick="insert('exp(')">exp</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('pi')">pi</button>
+                    <button class="button" onclick="insert('e')">e</button>
+                    <button class="button" onclick="insert('abs(')">abs</button>
+                    <button class="button" onclick="insert('floor(')">floor</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('ceil(')">ceil</button>
+                    <button class="button" onclick="insert('round(')">round</button>
+                    <button class="button" onclick="insert('min(')">min</button>
+                    <button class="button" onclick="insert('max(')">max</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('rad(')">rad</button>
+                    <button class="button" onclick="insert('deg(')">deg</button>
+                    <button class="button" onclick="insert('bin(')">bin</button>
+                    <button class="button" onclick="insert('hex(')">hex</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('oct(')">oct</button>
+                    <button class="button" onclick="insert('dec(')">dec</button>
+                    <button class="button" onclick="insert('roman(')">roman</button>
+                    <button class="button" onclick="insert('fib(')">fib</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('gcd(')">gcd</button>
+                    <button class="button" onclick="insert('lcm(')">lcm</button>
+                    <button class="button" onclick="insert('perm(')">perm</button>
+                    <button class="button" onclick="insert('comb(')">comb</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('sinh(')">sinh</button>
+                    <button class="button" onclick="insert('cosh(')">cosh</button>
+                    <button class="button" onclick="insert('tanh(')">tanh</button>
+                    <button class="button" onclick="insert('asinh(')">asinh</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('acosh(')">acosh</button>
+                    <button class="button" onclick="insert('atanh(')">atanh</button>
+                    <button class="button" onclick="insert('rand(')">rand</button>
+                    <button class="button" onclick="insert('randInt(')">randInt</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('toBase(')">toBase</button>
+                    <button class="button" onclick="insert('fromBase(')">fromBase</button>
+                    <button class="button" onclick="insert('toRoman(')">toRoman</button>
+                    <button class="button" onclick="insert('fromRoman(')">fromRoman</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('toBinary(')">toBinary</button>
+                    <button class="button" onclick="insert('toOctal(')">toOctal</button>
+                    <button class="button" onclick="insert('toDecimal(')">toDecimal</button>
+                    <button class="button" onclick="insert('toHexadecimal(')">toHexadecimal</button>
+                </div>
+                <div class="row">
+                    <button class="button" onclick="insert('fromBinary(')">fromBinary</button>
+                    <button class="button" onclick="insert('fromOctal(')">fromOctal</button>
+                    <button class="button" onclick="insert('fromDecimal(')">fromDecimal</button>
+                    <button class="button" onclick="insert('fromHexadecimal(')">fromHexadecimal</button>
+                </div>
+                
+
     </body>
 </html>

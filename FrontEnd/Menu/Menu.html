@@ -21,25 +21,25 @@
         <div class="wrapper">
             <div class="form-box register">
                 <h1>Registration</h1>
-                <form action="#">
+                <form action="/BackEnd/Process_form.php" method="post">
                     <div class="input-box">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" name="username" required>
+                        <input type="text" name="Username" required>
                         <label>Enter Username:</label>
                     </div>
                     <div class="input-box">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" name="email" required>
+                        <input type="email" name="Email" required>
                         <label>Enter Email:</label>
                     </div>
                     <div class="input-box">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" name="password" required>
+                        <input type="password" name="Password" required>
                         <label>Enter Password:</label>
                     </div>
                     <div class="input-box">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="re-password" name="password" required>
+                        <input type="password" name="Re-Password" required>
                         <label>Re-Enter Password:</label>
                     </div>
                     <div class="checkbox">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="forget-remember">
                         <label for="terms-and-conditions">
-                            <input id="terms-and-conditions" type="checkbox" required/> I accept the <span style="color: red;">terms and conditions</span>
+                            <input id="terms-and-conditions" type="checkbox" name="terms" required/> I accept the <span style="color: red;">terms and conditions</span>
                         </label>
                     </div>
                     <div class="submit-register">
@@ -59,7 +59,7 @@
             </div>
             <div class="form-box login">
                 <h1>Login</h1>
-                <form action="#">
+                <form action="">
                     <div class="input-box">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" name="username" required>
@@ -71,7 +71,7 @@
                         <label>Password</label>
                     </div>
                     <div class="forget-remember">
-                        <label><input type="checkbox">Remember Me</label>
+                        <label><input type="checkbox" name>Remember Me</label>
                         <a href="#">Forget Password?</a>
                     </div>
                     <div class="submit-register">
@@ -88,3 +88,4 @@
         <script src="MenuScript.js"></script>
     </body>
 </html>
+// End of Menu.html
