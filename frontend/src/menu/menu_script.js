@@ -20,6 +20,6 @@ iconClose.addEventListener("click", () => {
     wrapper.classList.remove("active-popup");
     console.log("close");
 });
-if (repassword != password) {
+if (repassword !== password) {
     alert("Password not match");
 }
