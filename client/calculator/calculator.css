@@ -1,0 +1,65 @@
+/*write a css class for the calculator*/
+.calculator {
+    width: 400px;
+    height: 500px;
+    background-color: #000000;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 0 0 10px #000000;
+    position: relative;
+}
+
+/* Path: FrontEnd\Calculator\Calculator.css */
+/*write a css class for the calculator screen*/
+.calculator-screen {
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    border-radius: 10px;
+    border: none;
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Path: FrontEnd\Calculator\Calculator.css */
+/*write a css class for the calculator keys*/
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+/* Path: FrontEnd\Calculator\Calculator.css */
+/*write a css class for the calculator key*/
+.calculator-keys button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    height: 60px;
+    border-radius: 5px;
+}
+
+/* Path: FrontEnd\Calculator\Calculator.css */
+/*write a css class for the calculator key:active*/
+.calculator-keys button:active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Path: FrontEnd\Calculator\Calculator.css */
+/*write a css class for the calculator key:active*/
+.calculator-keys button:active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
