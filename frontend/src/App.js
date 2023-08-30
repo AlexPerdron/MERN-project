@@ -1,12 +1,9 @@
 // import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-
 function App() {
-  return (
-    <div> 
-      This is Blog app
-    </div>
-  )
+
+  return <p>This is Blog app</p>;
+  
 }
 
 export default App;

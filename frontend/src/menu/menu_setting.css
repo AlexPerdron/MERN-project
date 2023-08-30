@@ -18,7 +18,7 @@ header {
     color: white;
 }
 body{
-    background-image: url("/client/asset/web_background.jpg");
+    background-image: url("/frontend/src/asset/web_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
