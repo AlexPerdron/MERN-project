@@ -1,5 +1,12 @@
+// import {useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+
 function App() {
-  return <p> This is Blog app</p>
+  return (
+    <div> 
+      This is Blog app
+    </div>
+  )
 }
 
 export default App;
