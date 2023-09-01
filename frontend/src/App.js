@@ -1,11 +1,14 @@
 // import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import HomePage from './pages/HomePage.js';
+import { Component } from 'react';
 
-function App() {
-
-  return <HomePage />;
-  
+class App extends Component {
+  render() {
+    return (
+      <HomePage />
+    );
+  }
 }
 
 export default App;

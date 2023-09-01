@@ -1,12 +1,10 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
-// import { Image } from '@material-ui/core';
-import image from '../../asset/header.jpg'
+import useStyles from './styles'
 
 export default function Header() {
+    const classes = useStyles();
     return (
-    <div style={{ backgroundImage: 'url(' + image + ')', backgroundSize: 'auto' }}
-    >Background Image
-    </div>
-    );
-    
+        <Typography variant='h4' align='center' className={classes.container} >Blog</Typography>
+    );   
 }
