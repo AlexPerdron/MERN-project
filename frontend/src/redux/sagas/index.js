@@ -5,7 +5,7 @@ import * as api from '../../api'
 function* fetchPostSaga(action){
     const posts = yield call(api.fetchPosts);
     console.log('[posts]', posts);
-    yield put(actions.getPosts.getPostsSuccess(posts));
+    yield put(actions.getPosts.getPostsSuccess(posts.data));
 }
 function* mySaga() {
     yield takeLatest(actions.getPosts.getPostsRequest, fetchPostSaga);
