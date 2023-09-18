@@ -1,12 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { themes } from '../../themes/index';
 
 export default makeStyles(() => ({
     container:{
-        backgroundColor: 'red',
-        color:'black',
+        backgroundColor: themes.palette.primary.main,
+        color: 'black',
         marginBottom: 20,
         fontWeight: 'lighter',
-        padding: '5px 0',
-        borderInline:'5px'
+        padding: 0,
     }
 }))
