@@ -18,9 +18,9 @@ export default function HomePage() {
     },[dispatch])
 
     return ( 
-        <Container maxWidth='lg' className={classes.container}>
+        <Container maxWidth='l00vw' className={classes.container}>
             <Header />
-            <PostList />
+            <PostList margin='15px' />
             <CreatePostModels />
             <Fab 
                 className={classes.fab} onClick={openCreatePostModal}>

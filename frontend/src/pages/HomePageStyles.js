@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 import { themes } from '../themes/index';
-import background from '../asset/background.jpg';
+
 
 export default makeStyles((theme) =>({
     fab: {
@@ -11,8 +11,6 @@ export default makeStyles((theme) =>({
         backgroundColor: themes.palette.primary.main,
     },
     container:{
-        backgroundColor: 'blue',
-        backgroundImage: `url(${background})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
