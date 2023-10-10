@@ -3,10 +3,11 @@ import { themes } from '../../themes/index';
 
 export default makeStyles(() => ({
     container:{
-        backgroundColor: themes.palette.primary.main,
+        background: themes.palette.primary.main,
         color: 'black',
         marginBottom: 20,
         fontWeight: 'lighter',
         padding: 0,
+        borderRadius: '25px',
     }
 }))
