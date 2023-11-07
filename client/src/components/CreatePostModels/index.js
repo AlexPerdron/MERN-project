@@ -15,7 +15,7 @@ import { modalState$ } from "../../redux/selectors";
 import useStyles from "./styles";
 import { hideModal } from "../../redux/actions";
 
-export default function CreatePostModels() {
+export default function CreatePostModals() {
 	const dispatch = useDispatch();
 	//Calling API to get data
 	const { isShow } = useSelector(modalState$);
