@@ -13,17 +13,26 @@ import CloseIcon from "@material-ui/icons/Close";
 
 import { modalState$ } from "../../redux/selectors";
 import useStyles from "./styles";
-import { hideModal } from "../../redux/actions";
+import { createPosts, hideModal } from "../../redux/actions";
 
 export default function CreatePostModals() {
-	const dispatch = useDispatch();
+	const [data, setData] = React.useState({
+		title: "",
+		content: "",
+		attachment: "",
+	});
+	
 	//Calling API to get data
+	const dispatch = useDispatch();
 	const { isShow } = useSelector(modalState$);
 	const classes = useStyles();
 
 	const onClose = React.useCallback(() => {
 		dispatch(hideModal());
 	}, [dispatch]);
+	const onSubmit = React.useCallback(() => {
+		dispatch(createPosts.createPostsRequest(data))
+	}, [data, dispatch]);
 
 	const body = (
 		<div className={classes.popup} id="simple-modal-title">
@@ -44,15 +53,34 @@ export default function CreatePostModals() {
 				Create New Post
 			</Typography>
 			<form noValidate autoComplete="off" className={classes.form}>
-				<TextField className={classes.title} label="Title" />
+				<TextField
+					className={classes.title}
+					label="Title"
+					value={data.title}
+					onChange={(e) =>
+						setData({ ...data, title: e.target.value })
+					}
+				/>
 				<TextareaAutosize
 					className={classes.textarea}
 					maxRows={15}
 					minRows={10}
-					label="Content..."
+					placeholder="Content..."
+					value={data.content}
+					onChange={(e) =>
+						setData({ ...data, content: e.target.value })
+					}
 				/>
-				<FileBase64 accept="image/*" multiple={false} type="file"/>
-				<IconButton className={classes.doneButton}>
+				<FileBase64
+					accept="image/*"
+					multiple={false}
+					type="file"
+					value={data.attachment}
+					onDone={({base64}) =>
+						setData({ ...data, attachment: base64 })
+					}
+				/>
+				<IconButton className={classes.doneButton} onClick={onSubmit}>
 					<DoneIcon />
 				</IconButton>
 			</form>
