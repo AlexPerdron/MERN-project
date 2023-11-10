@@ -16,14 +16,18 @@ import { useDispatch } from "react-redux";
 
 import useStyles from "./styles";
 import { updatePosts } from "../../../redux/actions";
-//import funcitons from '../Button/ButtonController';
 
 export default function Post({ post }) {
 	const classes = useStyles();
 	const dispatch = useDispatch();
 
 	const onFavBtnClick = React.useCallback(() => {
-		dispatch(updatePosts.updatePostsRequest({...post, likeCount: post.likeCount++,}));
+		dispatch(
+			updatePosts.updatePostsRequest({
+				...post,
+				likeCount: post.likeCount + 1
+			})
+		);
 	}, [dispatch, post]);
 
 	return (
@@ -39,7 +43,7 @@ export default function Post({ post }) {
 				}
 			/>
 			<CardMedia
-				image={post.attachment}
+				image={post.attachment || ""}
 				title="Title"
 				className={classes.media}
 			/>
@@ -55,7 +59,7 @@ export default function Post({ post }) {
 				<IconButton onClick={onFavBtnClick}>
 					<FavoriteIcon />
 					<Typography component="span" color="textSecondary">
-						{post.likeCount} likes
+						{`${post.likeCount} likes`}
 					</Typography>
 				</IconButton>
 			</CardActions>
