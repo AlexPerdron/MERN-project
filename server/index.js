@@ -2,16 +2,15 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
-import "dotenv/config";
+import dotenv from "dotenv";
 
 import posts from "./routers/posts.js";
-import { updatePosts } from "./controllers/posts.js";
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.port || 5000;
-const URI =
-	"mongodb+srv://ADMIN:2E9Thv1rJWYiXVVS@cluster.g5h4eer.mongodb.net/?retryWrites=true&w=majority";
-
+const PORT = process.env.PORT || 5000;
+const URI = process.env.DATABASE_URI;
 //limit client upload
 app.use(bodyParser.json({ limit: "30mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "30mb" }));
