@@ -12,7 +12,7 @@ export const getPosts = async (req, res) => {
     }
 };
 
-export const createPost = async (req, res) => {
+export const createPosts = async (req, res) => {
     try {
         const NewPost = req.body;
 
@@ -25,7 +25,7 @@ export const createPost = async (req, res) => {
     }
 }
 
-export const updatePost = async (req, res) => {
+export const updatePosts = async (req, res) => {
     try {
         const UpdatePost = req.body;
 
