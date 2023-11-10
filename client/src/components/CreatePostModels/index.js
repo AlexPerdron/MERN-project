@@ -37,7 +37,8 @@ export default function CreatePostModals() {
 	}, [dispatch]);
 	const onSubmit = React.useCallback(() => {
 		dispatch(createPosts.createPostsRequest(data));
-	}, [data, dispatch]);
+		onClose();
+	}, [data, dispatch, onClose]);
 
 	const body = (
 		<div className={classes.popup} id="simple-modal-title">
