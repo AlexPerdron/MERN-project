@@ -21,7 +21,7 @@ export default function CreatePostModals() {
 		content: "",
 		attachment: "",
 	});
-	
+
 	//Calling API to get data
 	const dispatch = useDispatch();
 	const { isShow } = useSelector(modalState$);
@@ -29,9 +29,14 @@ export default function CreatePostModals() {
 
 	const onClose = React.useCallback(() => {
 		dispatch(hideModal());
+		setData({
+			title: "",
+			content: "",
+			attachment: "",
+		});
 	}, [dispatch]);
 	const onSubmit = React.useCallback(() => {
-		dispatch(createPosts.createPostsRequest(data))
+		dispatch(createPosts.createPostsRequest(data));
 	}, [data, dispatch]);
 
 	const body = (
@@ -76,11 +81,15 @@ export default function CreatePostModals() {
 					multiple={false}
 					type="file"
 					value={data.attachment}
-					onDone={({base64}) =>
+					onDone={({ base64 }) =>
 						setData({ ...data, attachment: base64 })
 					}
 				/>
-				<IconButton className={classes.doneButton} onClick={onSubmit}>
+				<IconButton
+					className={classes.doneButton}
+					onClick={onSubmit}
+					onClose={onClose}
+				>
 					<DoneIcon />
 				</IconButton>
 			</form>

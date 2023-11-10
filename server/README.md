@@ -5,7 +5,11 @@ yarn
 ```
 ### start the client
 ```bash
-yarn start
+yarn run client
+```
+### start the server
+```bash
+yarn run server
 ```
 ### Description
 This is a personal fullstack project which will provide cv, personal infomation, achievement, etc.
@@ -16,4 +20,5 @@ This is a personal fullstack project which will provide cv, personal infomation,
 - Express for server side
 - React for frontend
 - MongoDB as database
+
 
