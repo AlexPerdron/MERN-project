@@ -6,9 +6,24 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		email:{
+			type: String,
+			required: true,
+		},
 		password: {
 			type: String,
 			required: true,
+		},
+		post: {
+			type: Array,
+			default: [],
+		},
+		profilePicture: String,
+		coverPicture: String,
+		description:{
+			type: String,
+			max: 50,
+			default:"",
 		},
 	},
 	{ timestamps: true }

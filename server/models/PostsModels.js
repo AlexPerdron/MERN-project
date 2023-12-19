@@ -20,6 +20,10 @@ const postSchema = new mongoose.Schema(
 			type: Number,
 			default: 0,
 		},
+		comment:{
+			type: Array,
+			default: [],
+		},
 	},
 	//createdAt, updateAt
 	{ timestamps: true }
