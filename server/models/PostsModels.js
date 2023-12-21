@@ -1,4 +1,4 @@
-import mongoose, { trusted } from "mongoose";
+import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
 	{
@@ -19,6 +19,10 @@ const postSchema = new mongoose.Schema(
 		likeCount: {
 			type: Number,
 			default: 0,
+		},
+		comment:{
+			type: Array,
+			default: [],
 		},
 	},
 	//createdAt, updateAt

@@ -1,19 +1,50 @@
 import { 
-	generateJwtToken, 
-	//returnUserIdFromToken 
-} from "../middleware/jwt.js";
+	findUserById, 
+	findUserByEmail,
+	findAllUser 
+} from "../services/userServices.js";
 
-export const loginUserHandler = async (req, res) => {
+const secretKey = process.env.SECRET_KEY;
+
+export const generateJwtTokenHandler = async (req, res) => {
+	const issuer = SocialMe;
+	const expiresDays = "10d";
+	const payload = { userId };
+	const token = jwt.sign(payload, secretKey, issuer, expiresDays);
+
+	return token;
+}
+
+export const createUserHandler = async (req, res) => {
 	try {
-		// Get the user's email and password from request body.
-		const { email, password } = req.body;
+		const {email, password, username} = req.body; 
+
 		const user = await findUserByEmail(email);
-		if (!user || !(await comparePasswords(password, user.password))) {
-			return res.status(401).json({ message: "Invalid email or password" });
+		console.log(user);
+
+		if (user) {
+			res.status(404).json({ 
+				message: "User already exists",
+				user 
+			});
 		}
-		const token = generateJwtToken(user.userId);
-		return res.status(200).json({ token: token });
-	} catch (err) {
-		return res.status(500).json({ message: err.message });
+		else {
+			const hashedPassword = await bcrypt.hashSync(password, 12);
+
+			await createUser({
+				username,
+				email,
+				password: hashedPassword,
+			});
+
+			res.status(201).json({ message: "User created" });
+		}
 	}
-};
+	catch (error) {
+		res.status(500).json({ error: error });
+	}
+}
+
+// export const test = async (req, res) => {
+// 	res.status(200).json({ message: "Test" });
+// }
