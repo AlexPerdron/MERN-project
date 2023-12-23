@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@material-ui/core";
 
-import useStyles from "./PostsPage/PostsPageStyles";
+import useStyles from "../PostsPage/PostsPageStyles";
 
 export default function HomePage() {
 	const classes = useStyles();
