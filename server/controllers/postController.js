@@ -1,8 +1,8 @@
-import { PostModel } from "../models/PostsModels.js";
+import { postModel } from "../models/postModel.js";
 
 export const getPosts = async (req, res) => {
 	try {
-		const posts = await PostModel.find();
+		const posts = await postModel.find();
 
 		console.log("posts", posts);
 
@@ -16,7 +16,7 @@ export const createPosts = async (req, res) => {
 	try {
 		const NewPost = req.body;
 
-		const post = new PostModel(NewPost);
+		const post = new postModel(NewPost);
 		await post.save();
 
 		res.status(200).json(post);
@@ -29,7 +29,7 @@ export const updatePosts = async (req, res) => {
 	try {
 		const UpdatePost = req.body;
 
-		const post = await PostModel.findOneAndUpdate(
+		const post = await postModel.findOneAndUpdate(
 			{ _id: UpdatePost._id },
 			UpdatePost,
 			{ new: true }
