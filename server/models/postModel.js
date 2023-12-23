@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema(
 			type: Number,
 			default: 0,
 		},
-		comment:{
+		comment: {
 			type: Array,
 			default: [],
 		},
@@ -29,4 +29,4 @@ const postSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-export const PostModel = mongoose.model("Post", postSchema);
+export const postModel = mongoose.model("Post", postSchema);
