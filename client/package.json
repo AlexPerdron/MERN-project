@@ -50,7 +50,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
-  "description": "This is a personal fullstack project server",
+  "description": "This is a personal fullstack project client",
   "main": "index.js",
   "author": "AlexPerdron",
   "license": "ISC"
