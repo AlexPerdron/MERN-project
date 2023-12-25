@@ -16,7 +16,7 @@ export const generateJwtToken = (userId) => {
 	return token;
 };
 
-export const  returnUserIdFromToken = (req) =>{
+export const returnUserIdFromToken = (req) => {
   try{
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, secretKey);
@@ -25,6 +25,33 @@ export const  returnUserIdFromToken = (req) =>{
   } catch {
     res.status(401).json({
       error: new Error('Invalid request!')
+    });
+  }
+};
+
+export const validateAndAuthorizeToken = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if(authHeader && authHeader.startsWith("Bearer ")){
+    const token = authHeader.split(" ")[1];
+
+    try{
+      const decodedToken = jwt.verify(token, secretKey);
+      console.log(decodedToken);
+      if (decodedToken.issuer === "SocialMe"){
+        next();
+      } else {
+        res.status(401).json({
+          status: "Unauthorized",
+        });
+      }
+    } catch (err) {
+      res.status(401).json({
+        status: "Unauthorized",
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: "Unauthorized",
     });
   }
 };
