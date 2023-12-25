@@ -5,17 +5,34 @@ import {
 	findUserByEmail,
 } from "../services/userService.js";
 
+//custom error
+const errorHandler = (err) => {
+	console.log(err.message, err.code);
+	let errors = { email: " ", password: " " };
+	if (err.code === 11000){
+		errors.email = "Email is already registered";
+		return errors;
+	}
+
+	//validation errors
+	if (err.message.includes("User validation failed")) {
+		Object.values(err.errors).forEach(({ properties }) => {
+			errors[properties.path] = properties.message;
+		});
+	};
+	return errors;
+};
+
 export const registerUserHandler = async (req, res) => {
 	try {
-		const email = req.body.email;
-		const user = await findUserByEmail(email);
-
-		if (user) {
-			res.status(405).json({
-				status: "404",
-				message: "User already exists",
-			});
-		}
+		//const email = req.body.email;
+		// const user = await findUserByEmail(email);
+		// if (user) {
+		// 	res.status(405).json({
+		// 		status: "405",
+		// 		message: "User already exists",
+		// 	});
+		// }
 
 		const newUser = await createUser(req.body);
 		let token = generateJwtToken(newUser._id);
@@ -25,11 +42,10 @@ export const registerUserHandler = async (req, res) => {
 			message: "User created successfully",
 			token: token,
 		});
-	} catch (error) {
+	} catch (err) {
+		const errors = errorHandler(err);
 		res.status(500).json({
-			status: "500",
-			message: "Server Error",
-			error: error,
+			errors,
 		});
 	}
 };
@@ -48,8 +64,8 @@ export const loginUserHandler = async (req, res) => {
 					token: token,
 				});
 			} else {
-				res.status(401).json({
-					status: "401",
+				res.status(402).json({
+					status: "402",
 					message: "Incorrect password",
 				});
 			}

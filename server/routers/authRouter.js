@@ -2,9 +2,10 @@ import express from "express";
 import {
     registerUserHandler,
     getSingleUserHandler,
-    loginUserHandler
+    loginUserHandler,
     //test
 } from "../controllers/authController.js";
+import { validateAndAuthorizeToken } from "../middleware/jwt.js";
 
 const authRouter = express.Router();
 
