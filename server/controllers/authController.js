@@ -1,34 +1,80 @@
 import { generateJwtToken } from "../middleware/jwt.js";
-import { userModel } from "../models/userModel.js";
+import {
+	createUser,
+	findUserById,
+	findUserByEmail,
+} from "../services/userService.js";
+
+//custom error
+const errorHandler = (err) => {
+	console.log(err.message, err.code);
+	let errors = { email: " ", password: " " };
+	if (err.code === 11000){
+		errors.email = "Email is already registered";
+		return errors;
+	}
+
+	//validation errors
+	if (err.message.includes("User validation failed")) {
+		Object.values(err.errors).forEach(({ properties }) => {
+			errors[properties.path] = properties.message;
+		});
+	};
+	return errors;
+};
 
 export const registerUserHandler = async (req, res) => {
 	try {
+		//const email = req.body.email;
+		// const user = await findUserByEmail(email);
+		// if (user) {
+		// 	res.status(405).json({
+		// 		status: "405",
+		// 		message: "User already exists",
+		// 	});
+		// }
+
+		const newUser = await createUser(req.body);
+		let token = generateJwtToken(newUser._id);
+
+		res.status(200).json({
+			status: "200",
+			message: "User created successfully",
+			token: token,
+		});
+	} catch (err) {
+		const errors = errorHandler(err);
+		res.status(500).json({
+			errors,
+		});
+	}
+};
+
+export const loginUserHandler = async (req, res) => {
+	try {
 		const email = req.body.email;
-		const username = req.body.username;
 		const password = req.body.password;
-
-		const user = await userModel.where({ email: email }).findOne();
-
+		const user = await findUserByEmail(email);
 		if (user) {
-			res.status(405).json({
-				status: "404",
-				message: "User already exists",
-			});
-		} else {
-			const newUser = userModel.create({
-				email: email,
-				username: username,
-				password: password,
-			});
-			// await newUser.save();
-			let token = generateJwtToken(newUser._id);
-			res.status(201).json({
-				status: "200",
-				message: "User created successfully",
-				// token: token,
-			});
+			if (user.password === password) {
+				let token = generateJwtToken(user._id);
+				res.status(200).json({
+					status: "200",
+					message: "User logged in successfully",
+					token: token,
+				});
+			} else {
+				res.status(402).json({
+					status: "402",
+					message: "Incorrect password",
+				});
+			}
 		}
-	} catch (error) {
+		res.status(404).json({
+			status: "404",
+			message: "Incorrect email",
+		});
+	} catch (err) {
 		res.status(500).json({
 			status: "500",
 			message: "Server Error",
@@ -37,47 +83,15 @@ export const registerUserHandler = async (req, res) => {
 	}
 };
 
-export const loginUserHandler = async (req, res) => {
-	const email = req.body.email;
-	const password = req.body.password;
-	const user = await userModel.where({ email: email })
-		.findOne()
-		.select("+password");
-	if (!user) {
-		res.status(404).json({ message: "User not found" });
-	} else {
-		const isMatch = await user.comparePassword(password);
-		if (!isMatch) {
-			res.status(401).json({ message: "Invalid password" });
-		} else {
-			let token = generateJwtToken(user._id);
-			res.status(200).json({
-				message: "User logged in successfully",
-				token: token,
-			});
-		}
-	}
-};
-
-export const getAllUserHandler = async (req, res) => {
-	try {
-		const users = await userModel.find();
-
-		res.status(200).json(users);
-	} catch (error) {
-		res.status(500).json({ error: error });
-	}
-};
-
 export const getSingleUserHandler = async (req, res) => {
 	try {
 		const userId = req.params.userId;
-		const user = await userModel.findOne({ _id: userId });
+		const user = await findUserById(userId);
 		if (!user) {
 			res.status(404).json({ message: "User not found" });
-		} else {
-			res.status(200).json(user);
 		}
+
+		res.status(200).json(user);
 	} catch (error) {
 		res.status(500).json({ error: error });
 	}
