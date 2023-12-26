@@ -41,7 +41,7 @@ export default function CreatePostModals() {
 	}, [data, dispatch, onClose]);
 
 	const body = (
-		<div className={classes.popup} id="simple-modal-title">
+		<div className={classes.popup} id="create-post-popup">
 			<IconButton
 				display="flex"
 				variant="contained"
@@ -63,9 +63,7 @@ export default function CreatePostModals() {
 					className={classes.title}
 					label="Title"
 					value={data.title}
-					onChange={(e) =>
-						setData({ ...data, title: e.target.value })
-					}
+					onChange={(e) => setData({ ...data, title: e.target.value })}
 				/>
 				<TextareaAutosize
 					className={classes.textarea}
@@ -73,18 +71,14 @@ export default function CreatePostModals() {
 					minRows={10}
 					placeholder="Content..."
 					value={data.content}
-					onChange={(e) =>
-						setData({ ...data, content: e.target.value })
-					}
+					onChange={(e) => setData({ ...data, content: e.target.value })}
 				/>
 				<FileBase64
 					accept="image/*"
 					multiple={false}
 					type="file"
 					value={data.attachment}
-					onDone={({ base64 }) =>
-						setData({ ...data, attachment: base64 })
-					}
+					onDone={({ base64 }) => setData({ ...data, attachment: base64 })}
 				/>
 				<IconButton
 					className={classes.doneButton}
