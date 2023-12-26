@@ -9,7 +9,7 @@ export default makeStyles(() => ({
 		display: "fixed",
 		padding: "10px",
 		height: "auto",
-        borderBottomRightRadius:"10px",
+		borderBottomRightRadius: "10px",
 	},
 	typography: {
 		color: themes.palette.secondary.main,

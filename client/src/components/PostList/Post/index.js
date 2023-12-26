@@ -25,7 +25,7 @@ export default function Post({ post }) {
 		dispatch(
 			updatePosts.updatePostsRequest({
 				...post,
-				likeCount: post.likeCount + 1
+				likeCount: post.likeCount + 1,
 			})
 		);
 	}, [dispatch, post]);

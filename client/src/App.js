@@ -1,11 +1,10 @@
 // import {useState} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import PostsPage from "./pages/PostsPage/PostsPage.js";
-import LoginPage from "./pages/LoginPage/LoginPage.js";
-import Header from "./components/Header/index.js";
-
 import { Component } from "react";
+
+import Header from "./components/Header/index.js";
 import SideBar from "./components/SideBar/index.js";
+import HomePage from "./pages/HomePage/HomePage.js";
 
 class App extends Component {
 	render() {
@@ -14,8 +13,7 @@ class App extends Component {
 				<Header />
 				<div className="App">
 					<SideBar />
-					<LoginPage />
-					// <PostsPage />
+					<HomePage />
 				</div>
 			</div>
 		);

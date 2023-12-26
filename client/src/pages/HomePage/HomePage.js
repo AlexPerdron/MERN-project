@@ -5,7 +5,7 @@ import AddIcon from "@material-ui/icons/Add";
 
 import PostList from "../../components/PostList";
 import CreatePostModels from "../../components/CreatePostModels";
-import useStyles from "./PostsPageStyles";
+import useStyles from "./HomePageStyles";
 import { showModal } from "../../redux/actions";
 
 export default function HomePage() {

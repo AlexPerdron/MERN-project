@@ -46,7 +46,7 @@ export default makeStyles((theme) => ({
 	},
 	closeButton: {
 		position: "fixed",
-        top: theme.spacing(2),
+		top: theme.spacing(2),
 		right: theme.spacing(2),
 		backgroundColor: themes.palette.primary.main,
 		color: themes.palette.secondary.main,
